@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF0129C92316DE740043E84A /* ToDoDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0129C82316DE740043E84A /* ToDoDetailTableViewController.swift */; };
 		BF71D108230FA15700031828 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF71D107230FA15700031828 /* AppDelegate.swift */; };
 		BF71D10D230FA15700031828 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF71D10B230FA15700031828 /* Main.storyboard */; };
 		BF71D10F230FA15B00031828 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF71D10E230FA15B00031828 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF0129C82316DE740043E84A /* ToDoDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailTableViewController.swift; sourceTree = "<group>"; };
 		BF71D104230FA15700031828 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF71D107230FA15700031828 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF71D10C230FA15700031828 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				BF71D11B231315E700031828 /* ToDoTableViewController.swift */,
 				BF71D107230FA15700031828 /* AppDelegate.swift */,
 				BF71D10B230FA15700031828 /* Main.storyboard */,
+				BF0129C82316DE740043E84A /* ToDoDetailTableViewController.swift */,
 				BF71D10E230FA15B00031828 /* Assets.xcassets */,
 				BF71D110230FA15B00031828 /* LaunchScreen.storyboard */,
 				BF71D113230FA15B00031828 /* Info.plist */,
@@ -140,6 +143,7 @@
 			files = (
 				BF71D108230FA15700031828 /* AppDelegate.swift in Sources */,
 				BF71D11C231315E700031828 /* ToDoTableViewController.swift in Sources */,
+				BF0129C92316DE740043E84A /* ToDoDetailTableViewController.swift in Sources */,
 				BF71D11A2313146600031828 /* ToDo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
