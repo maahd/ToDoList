@@ -25,6 +25,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Rvg-IL-28d" kind="presentation" identifier="EditToDo" id="ht3-tb-rNk"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -193,7 +196,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dueDateLabel" destination="FnA-Wm-Hqh" id="6G4-c6-7WC"/>
-                        <outlet property="dueDatePicker" destination="qOs-tp-hQ9" id="psT-Zg-w5b"/>
+                        <outlet property="dueDatePickerView" destination="qOs-tp-hQ9" id="psT-Zg-w5b"/>
                         <outlet property="isCompleteButton" destination="427-jA-cr7" id="Bsc-bN-wpN"/>
                         <outlet property="notesTextView" destination="q1I-IP-5Qe" id="N6m-0l-JjY"/>
                         <outlet property="saveButton" destination="YTd-6k-naE" id="JrT-2S-T30"/>
@@ -242,4 +245,7 @@
         <image name="Checked" width="44" height="44"/>
         <image name="Unchecked" width="44" height="44"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ht3-tb-rNk"/>
+    </inferredMetricsTieBreakers>
 </document>

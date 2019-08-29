@@ -22,12 +22,12 @@ class ToDoDetailTableViewController: UITableViewController {
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var isCompleteButton: UIButton!
     @IBOutlet var dueDateLabel: UILabel!
-    @IBOutlet var dueDatePicker: UIDatePicker!
+    @IBOutlet var dueDatePickerView: UIDatePicker!
     @IBOutlet var notesTextView: UITextView!
     @IBOutlet var saveButton: UIBarButtonItem!
     
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
-        updateDueDateLabel(date: dueDatePicker.date)
+        updateDueDateLabel(date: dueDatePickerView.date)
     }
     
     
@@ -50,8 +50,17 @@ class ToDoDetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dueDatePicker.date = Date().addingTimeInterval(24*60*60)
-        updateDueDateLabel(date: dueDatePicker.date)
+        if let todo = todo {
+            navigationItem.title = "To-Do"
+            titleTextField.text = todo.title
+            isCompleteButton.isSelected = todo.isComplete
+            dueDatePickerView.date = todo.dueDate
+            notesTextView.text = todo.notes
+        } else {
+            dueDatePickerView.date = Date().addingTimeInterval(24*60*60)
+        }
+        
+        updateDueDateLabel(date: dueDatePickerView.date)
         updateSavebuttonState()
     }
     
@@ -62,7 +71,7 @@ class ToDoDetailTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath {
         case datePickerIndexPath:
-            return isPickerHidden ? 0 : dueDatePicker.frame.height
+            return isPickerHidden ? 0 : dueDatePickerView.frame.height
         case notesTextViewIndexPath:
             return largeCellHeight
         default:
@@ -86,7 +95,7 @@ class ToDoDetailTableViewController: UITableViewController {
         
         let title = titleTextField.text!
         let isComplete = isCompleteButton.isSelected
-        let dueDate = dueDatePicker.date
+        let dueDate = dueDatePickerView.date
         let notes = notesTextView.text
         
         todo = ToDo(title: title, isComplete: isComplete, dueDate: dueDate, notes: notes)
