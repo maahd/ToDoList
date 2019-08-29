@@ -9,6 +9,8 @@
 import UIKit
 
 class ToDoDetailTableViewController: UITableViewController {
+    var todo: ToDo?
+    
     var isPickerHidden = true
     let dateLabelIndexPath = IndexPath(row: 0, section: 1)
     let datePickerIndexPath = IndexPath(row: 1, section: 1)
@@ -75,5 +77,18 @@ class ToDoDetailTableViewController: UITableViewController {
             tableView.beginUpdates()
             tableView.endUpdates()
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        guard segue.identifier == "saveUnwind" else { return }
+        
+        let title = titleTextField.text!
+        let isComplete = isCompleteButton.isSelected
+        let dueDate = dueDatePicker.date
+        let notes = notesTextView.text
+        
+        todo = ToDo(title: title, isComplete: isComplete, dueDate: dueDate, notes: notes)
     }
 }
