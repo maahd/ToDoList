@@ -18,14 +18,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCellIdentifier" id="YrF-4e-27g">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCellIdentifier" id="YrF-4e-27g" customClass="ToDoCell" customModule="ToDoList" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YrF-4e-27g" id="A6P-gD-UWd">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HeS-vI-v3H">
+                                            <rect key="frame" x="8" y="8" width="44" height="27.5"/>
+                                            <state key="normal" image="Unchecked"/>
+                                            <state key="selected" image="Checked"/>
+                                            <connections>
+                                                <action selector="completeButtonTapped:" destination="YrF-4e-27g" eventType="touchUpInside" id="0f9-wg-mES"/>
+                                                <action selector="isCompleteButtonTapped:" destination="sbl-Pa-X0D" eventType="touchUpInside" id="uBO-lN-qJV"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVg-JX-Xrq">
+                                            <rect key="frame" x="60" y="8" width="307" height="27.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="NVg-JX-Xrq" secondAttribute="bottom" constant="8" id="4SY-yU-y4M"/>
+                                        <constraint firstAttribute="bottom" secondItem="HeS-vI-v3H" secondAttribute="bottom" constant="8" id="GiJ-Ma-IWU"/>
+                                        <constraint firstAttribute="trailing" secondItem="NVg-JX-Xrq" secondAttribute="trailing" constant="8" id="bQK-t4-TOo"/>
+                                        <constraint firstItem="NVg-JX-Xrq" firstAttribute="top" secondItem="A6P-gD-UWd" secondAttribute="top" constant="8" id="heS-Jp-eWN"/>
+                                        <constraint firstItem="NVg-JX-Xrq" firstAttribute="leading" secondItem="HeS-vI-v3H" secondAttribute="trailing" constant="8" id="l1I-bH-3sW"/>
+                                        <constraint firstItem="NVg-JX-Xrq" firstAttribute="leading" secondItem="HeS-vI-v3H" secondAttribute="trailing" constant="8" id="mE6-Kb-azX"/>
+                                        <constraint firstItem="HeS-vI-v3H" firstAttribute="leading" secondItem="A6P-gD-UWd" secondAttribute="leading" constant="8" id="sit-gW-4ZQ"/>
+                                        <constraint firstItem="HeS-vI-v3H" firstAttribute="top" secondItem="A6P-gD-UWd" secondAttribute="top" constant="8" id="tgb-bt-jOc"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="isCompletebutton" destination="HeS-vI-v3H" id="FiW-b1-Xji"/>
+                                    <outlet property="titleLabel" destination="NVg-JX-Xrq" id="KLh-O5-Ivo"/>
                                     <segue destination="Rvg-IL-28d" kind="presentation" identifier="EditToDo" id="ht3-tb-rNk"/>
                                 </connections>
                             </tableViewCell>
